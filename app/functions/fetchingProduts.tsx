@@ -1,14 +1,17 @@
 export async function fetchAllProduct() {
-  const res = await fetch("https://fakestoreapi.com/products", {
-    cache: "no-store",
-  });
-  if (!res.ok) {
-    throw new Error(
-      `Failed to fetch products: ${res.status} ${res.statusText}`
-    );
+  try {
+    const res = await fetch("https://fakestoreapi.com/products", {
+      cache: "no-store",
+    });
+    if (!res.ok)
+      throw new Error(
+        `Failed to fetch products: ${res.status} ${res.statusText}`
+      );
+    return await res.json();
+  } catch (error) {
+    console.error("Fetch products error:", error);
+    throw error;
   }
-  const product = await res.json();
-  return product;
 }
 
 export async function fetchSingleProduct(id: number) {
