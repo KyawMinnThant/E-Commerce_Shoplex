@@ -9,16 +9,16 @@ const nextConfig: NextConfig = {
           {
             key: "Content-Security-Policy",
             value: `
-              default-src 'self';
-              script-src 'self' 'unsafe-inline' 'unsafe-eval' https://trusted.cdn.com;
-              style-src 'self' 'unsafe-inline' https://fonts.googleapis.com;
-              img-src * data:;
-              font-src 'self' https://fonts.gstatic.com;
-              connect-src 'self' https://api.example.com;
-              frame-src 'none';
-              base-uri 'self';
-              form-action 'self';
-            `
+  default-src *;
+  script-src * 'unsafe-inline' 'unsafe-eval' *;
+  style-src * 'unsafe-inline' *;
+  img-src * data:;
+  connect-src *;
+  font-src *;
+  frame-src *;
+  base-uri *;
+  form-action *;
+`
               .replace(/\n/g, " ")
               .trim(),
           },
