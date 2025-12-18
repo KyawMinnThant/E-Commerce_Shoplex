@@ -1,6 +1,6 @@
-import Breadcrumb from "@/app/components/breadcrumb";
-import ProductDetail from "@/app/components/productdetail";
-import { fetchSingleProduct } from "@/app/functions/fetchingProduts";
+import Breadcrumb from "../../components/breadcrumb";
+import ProductDetail from "../../components/productdetail";
+import { fetchSingleProduct } from "../../functions/fetchingProduts";
 
 interface Product {
   id: number;

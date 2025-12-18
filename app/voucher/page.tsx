@@ -1,5 +1,5 @@
 "use client";
-import { useCartStore } from "../actions/store/cartStore";
+import { useCartStore } from "../store/cartStore";
 import Breadcrumb from "../components/breadcrumb";
 import Voucher from "../components/vouchercomponent";
 
