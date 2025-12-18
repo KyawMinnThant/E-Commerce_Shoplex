@@ -1,8 +1,6 @@
 export async function fetchAllProduct() {
   try {
-    const res = await fetch("https://fakestoreapi.com/products", {
-      cache: "no-store",
-    });
+    const res = await fetch("https://fakestoreapi.com/products", {});
     if (!res.ok)
       throw new Error(
         `Failed to fetch products: ${res.status} ${res.statusText}`
@@ -15,9 +13,7 @@ export async function fetchAllProduct() {
 }
 
 export async function fetchSingleProduct(id: number) {
-  const res = await fetch(`https://fakestoreapi.com/products/${id}`, {
-    cache: "no-store",
-  });
+  const res = await fetch(`https://fakestoreapi.com/products/${id}`, {});
   if (!res.ok) {
     throw new Error(
       `Failed to fetch product with id ${id}: ${res.status} ${res.statusText}`
@@ -28,9 +24,7 @@ export async function fetchSingleProduct(id: number) {
 }
 
 export async function fetchAllCategory() {
-  const res = await fetch("https://fakestoreapi.com/products/categories", {
-    cache: "no-store",
-  });
+  const res = await fetch("https://fakestoreapi.com/products/categories", {});
   if (!res.ok) {
     throw new Error(
       `Failed to fetch categories: ${res.status} ${res.statusText}`
