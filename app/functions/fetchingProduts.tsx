@@ -1,6 +1,8 @@
 export async function fetchAllProduct() {
   const res = await fetch("https://fakestoreapi.com/products", {
-    cache: "no-store",
+    next: {
+      revalidate: 60,
+    },
   });
   if (!res.ok) {
     throw new Error(
@@ -13,7 +15,9 @@ export async function fetchAllProduct() {
 
 export async function fetchSingleProduct(id: number) {
   const res = await fetch(`https://fakestoreapi.com/products/${id}`, {
-    cache: "no-store",
+    next: {
+      revalidate: 60,
+    },
   });
   if (!res.ok) {
     throw new Error(
@@ -26,7 +30,9 @@ export async function fetchSingleProduct(id: number) {
 
 export async function fetchAllCategory() {
   const res = await fetch("https://fakestoreapi.com/products/categories", {
-    cache: "no-store",
+    next: {
+      revalidate: 60,
+    },
   });
   if (!res.ok) {
     throw new Error(
